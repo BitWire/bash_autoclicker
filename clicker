@@ -1,0 +1,15 @@
+#!/bin/bash
+i=1
+x=653
+y=354
+while [ $i -le 100000000 ]
+do 
+  xdotool mousemove "$x" "$y" click --delay 30 1    ## click 1 am Zeilenende ergänzen, wenn an jeder Position auch geklickt werden soll
+  i=$(( $i + 1 ))
+  x=$(( $x + (shuf -i1-20 -n1) ))
+  y=$(( $y + (shuf -i1-20 -n1) ))
+  xdotool mousemove "$x" "$y" click --delay 30 1    ## click 1 am Zeilenende ergänzen, wenn an jeder Position auch geklickt werden soll
+  i=$(( $i + 1 ))
+  x=$(( $x - (shuf -i1-20 -n1) ))
+  y=$(( $y - (shuf -i1-20 -n1) ))
+done
